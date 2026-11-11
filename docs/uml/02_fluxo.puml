@@ -1,0 +1,11 @@
+@startuml
+title Fluxo de aceitação Bootcamp.Automation.Mobile
+start
+:launchApp clearState=true;
+:Executar onboarding/main.yml;
+:Executar dashboard/main.yml;
+:Executar auth/signup.yml;
+:Executar auth/login.yml;
+:Registrar screenshots, SO e falhas;
+stop
+@enduml
