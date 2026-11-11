@@ -1,17 +1,20 @@
 @startuml
-title Fluxo conceitual — Bootcamp.Automation.Mobile
-actor Usuario
-component "Entrada" as Entrada
-component "Validador" as Validador
-component "Roteiro / Exercício" as Roteiro
-component "Ambiente externo" as Externo
-Usuario --> Entrada
-Entrada --> Validador
-Validador --> Roteiro
-Roteiro --> Externo : se aplicavel
-Roteiro --> Usuario : resultado
-note right of Roteiro
-Diagrama conceitual.
-Nao declara classes existentes.
-end note
+title Bootcamp.Automation.Mobile — fontes e alvos de teste
+actor "Executor QA" as Exec
+component "samples/wikipedia-android-advanced/run-test.yml" as C0
+Exec --> C0
+component "samples/wikipedia-android-advanced/auth/login.yml" as C1
+Exec --> C1
+component "samples/wikipedia-android-advanced/onboarding/*" as C2
+Exec --> C2
+component "samples/wikipedia-android-advanced/dashboard/*" as C3
+Exec --> C3
+component "samples/android-advanced-flow.yaml e samples/ios-advanced-flow.yam" as C4
+Exec --> C4
+component "Alvo externo / app" as Ext
+C0 ..> Ext : validar
+C1 ..> Ext : validar
+C2 ..> Ext : validar
+C3 ..> Ext : validar
+C4 ..> Ext : validar
 @enduml

@@ -35,3 +35,7 @@ maestro test samples/android-flow.yaml
   - Abrir pasta do projeto no Android Studio e emular um dispositivo android.
   - Instalar a aplicação a ser testada no emulador
   - Ao emular será executado o comando maestro studio que iniciará um serviço local web para configuração. Todos os testes e resultados são exibidos lá!.
+
+## Documentação detalhada (v1.0.0)
+
+[Projeto](docs/projeto/ESPECIFICACAO.md) · [UML](docs/uml/README.md) · [Plano QA](docs/testes/PLANO_DE_TESTES.md) · [Versões](docs/controle/VERSIONAMENTO.md)
