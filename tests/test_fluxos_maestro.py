@@ -61,6 +61,24 @@ class TestesMaestro(unittest.TestCase):
                 conteudo = (SAMPLES / nome).read_text(encoding="utf-8")
                 self.assertNotIn("Non existent view", conteudo)
 
+    def test_login_didatico_e_offline_nao_envia_credenciais(self):
+        script = (SAMPLES / "wikipedia-android-advanced/scripts/fetchTestUser.js").read_text(
+            encoding="utf-8"
+        )
+        login = (SAMPLES / "wikipedia-android-advanced/auth/login.yml").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn('output.test_user', script)
+        self.assertIn('example.invalid', script)
+        self.assertNotIn('http.get(', script)
+        self.assertNotIn('fetch(', script)
+        self.assertNotIn('jsonplaceholder', script.lower())
+        self.assertIn('runScript: "../scripts/fetchTestUser.js"', login)
+        self.assertIn('"${output.test_user.username}"', login)
+        # Use the form only; sending invented credentials to Wikipedia is not a valid E2E login.
+        self.assertNotIn('- tapOn: "LOG IN"', login)
+        self.assertNotIn('- tapOn: "Create account"', login)
+
     def test_remocao_de_binarios_duplicados_preserva_referencia(self):
         self.assertTrue((SAMPLES / "wikipedia.apk").is_file())
         self.assertTrue((SAMPLES / "wikipedia.zip").is_file())
