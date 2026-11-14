@@ -79,6 +79,16 @@ class TestesMaestro(unittest.TestCase):
         self.assertNotIn('- tapOn: "LOG IN"', login)
         self.assertNotIn('- tapOn: "Create account"', login)
 
+    def test_cadastro_gera_identidade_apenas_ficticia(self):
+        fixture = SAMPLES / "wikipedia-android-advanced/scripts/generateCredentials.js"
+        code = fixture.read_text(encoding="utf-8")
+        self.assertIn("@example.invalid", code)
+        self.assertEqual(1, code.count("Date.now()"))
+        self.assertIn("output.credentials =", code)
+        self.assertNotIn("@test.com", code)
+        self.assertNotIn("fetch(", code)
+        self.assertNotIn("http.post(", code)
+
     def test_remocao_de_binarios_duplicados_preserva_referencia(self):
         self.assertTrue((SAMPLES / "wikipedia.apk").is_file())
         self.assertTrue((SAMPLES / "wikipedia.zip").is_file())
