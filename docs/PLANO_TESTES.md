@@ -24,3 +24,13 @@ python -m unittest discover -s tests -p 'test_*.py' -v
 - Wikipedia Android composta: `maestro test samples/wikipedia-android-advanced/run-test.yml`.
 
 Critérios: app instalado, versão identificada, comandos `tapOn` e `assertVisible` aprovados, erros e evidências capturados. **Esses testes não estão cobertos pelo workflow atual**, e seu resultado não deve ser indicado como aprovado antes de execução em dispositivo.
+
+## MOBILE-QA 1.2.0 — fixture offline e login não submetido
+
+| ID | Cenário | Evidência |
+| --- | --- | --- |
+| YAML-05 | `fetchTestUser.js` usa usuário local exclusivamente sintético | Teste de script e endereço `example.invalid` |
+| YAML-06 | Fluxo `auth/login.yml` referencia fixture e não envia login fictício | Teste estrutural do YAML |
+| YAML-07 | Ausência de dependência JSONPlaceholder na fixture de login | Teste sobre o arquivo JS |
+
+**Limitações:** a validação não executa Wikipedia, não autentica usuários e não demonstra interações reais em Android/iOS. Para homologar, instalar o app na versão adequada e rodar `maestro test` nos fluxos correspondentes, coletando screenshots e status.
