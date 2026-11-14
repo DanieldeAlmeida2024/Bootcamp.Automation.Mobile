@@ -12,3 +12,7 @@
 ## Histórico
 
 As versões anteriores usam a fixture remota didática. Este commit não modifica APKs, ZIPs, outras telas ou a configuração de dispositivos.
+
+## Reconciliação da documentação (14/11/2026)
+
+Preservadas especificação, matriz histórica e duas visualizações UML da branch antiga, sem substituir os requisitos, plano de testes e scripts da main atual. O status vigente de execução depende do GitHub Actions; históricos de 11/11 não são homologação.
