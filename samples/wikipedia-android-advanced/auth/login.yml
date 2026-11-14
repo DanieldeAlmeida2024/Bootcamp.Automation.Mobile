@@ -8,7 +8,7 @@ appId: org.wikipedia
 - tapOn: "Username"
 - inputText: "${output.test_user.username}"
 - tapOn: "Password"
-- inputText: "No provided"
-- tapOn: "LOG IN"
+- inputText: "demo-no-real-password"
+# Este cenário demonstra somente o preenchimento: não envia credenciais a Wikipedia.
 - back
 - back
