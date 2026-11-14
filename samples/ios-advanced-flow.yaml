@@ -1,7 +1,7 @@
 appId: org.wikimedia.wikipedia
 tags:
   - ios
-  - passing
+  - device-required
   - advanced
 ---
 - runFlow: subflows/onboarding-ios.yaml
