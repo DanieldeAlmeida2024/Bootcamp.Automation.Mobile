@@ -48,3 +48,7 @@ Estes arquivos incluem conteúdo de demonstração; use contas e dados fictício
 O exemplo composto em `samples/wikipedia-android-advanced/` utiliza agora um usuário fictício da fixture local JavaScript, sem acessar o JSONPlaceholder nem compartilhar dados de terceiros. O subfluxo `auth/login.yml` demonstra **apenas o preenchimento do formulário**: não envia senha ou tentativa de autenticação ao serviço público da Wikipedia.
 
 Isso evita depender da disponibilidade e do conteúdo de uma API externa e não tenta representar login real como aprovado. O teste estrutural verifica a fixture local, o domínio `example.invalid` e a ausência de submissão automática. Ainda é necessário executar Maestro manualmente num dispositivo/emulador para validar seletores e navegação.
+
+## Proteção dos exemplos de conta
+
+A suíte de validação estrutural também verifica que a fixture de usuário do cenário Wikipedia é **offline** e usa domínio fictício `example.invalid`. Os exemplos de login e cadastro avançados apenas preenchem campos e voltam às telas anteriores; nenhum desses fluxos submete uma conta real. A proteção faz parte dos testes de CI e não equivale a execução em Android/iOS.
