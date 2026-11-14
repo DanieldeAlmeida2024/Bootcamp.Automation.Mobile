@@ -1,17 +1,22 @@
 @startuml
-title Fluxo conceitual — Bootcamp.Automation.Mobile
-actor Usuario
-component "Entrada" as Entrada
-component "Validador" as Validador
-component "Roteiro / Exercício" as Roteiro
-component "Ambiente externo" as Externo
-Usuario --> Entrada
-Entrada --> Validador
-Validador --> Roteiro
-Roteiro --> Externo : se aplicavel
-Roteiro --> Usuario : resultado
-note right of Roteiro
-Diagrama conceitual.
-Nao declara classes existentes.
+title Fluxos Maestro — Wikipedia Android / iOS
+actor "Estudante / tester" as tester
+component "Maestro CLI" as maestro
+component "Fluxos YAML\n(sms e avançados)" as flows
+component "Scripts auxiliares JS" as js
+component "App Wikipedia\nAndroid / iOS" as wikipedia
+component "CI Python + PyYAML" as ci
+tester --> maestro : maestro test fluxo.yaml
+maestro --> flows : lê comandos
+flows ..> js : runScript
+maestro --> wikipedia : launchApp, tapOn,
+assertVisible
+ci --> flows : valida YAML e refs
+note bottom of ci
+  Sem emulador: não é E2E
+end note
+note right of wikipedia
+  Android: org.wikipedia
+  iOS: org.wikimedia.wikipedia
 end note
 @enduml
