@@ -34,3 +34,7 @@ Critérios: app instalado, versão identificada, comandos `tapOn` e `assertVisib
 | YAML-07 | Ausência de dependência JSONPlaceholder na fixture de login | Teste sobre o arquivo JS |
 
 **Limitações:** a validação não executa Wikipedia, não autentica usuários e não demonstra interações reais em Android/iOS. Para homologar, instalar o app na versão adequada e rodar `maestro test` nos fluxos correspondentes, coletando screenshots e status.
+
+### MOBILE-QA 1.2.1 — verificação implementada
+
+As regressões `test_fixture_login_offline` e `test_login_e_cadastro_nao_enviam_credenciais` em `tests/test_fluxos_maestro.py` verificam que a fixture não consulta serviço remoto, que ambos os fluxos usam scripts sintéticos locais e que terminam com comandos de voltar sem pressionar botões de submissão. O CI continua estrutural; execução em emulador/dispositivo permanece pendente.
