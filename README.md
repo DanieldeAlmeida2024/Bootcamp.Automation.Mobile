@@ -52,3 +52,9 @@ Isso evita depender da disponibilidade e do conteúdo de uma API externa e não 
 ## Proteção dos exemplos de conta
 
 A suíte de validação estrutural também verifica que a fixture de usuário do cenário Wikipedia é **offline** e usa domínio fictício `example.invalid`. Os exemplos de login e cadastro avançados apenas preenchem campos e voltam às telas anteriores; nenhum desses fluxos submete uma conta real. A proteção faz parte dos testes de CI e não equivale a execução em Android/iOS.
+
+## Modelagem específica e histórico dos cenários
+
+[Especificação](docs/projeto/ESPECIFICACAO.md) · [Matriz histórica](docs/testes/PLANO_DE_TESTES.md) · [UML e fluxos próprios](docs/uml/README.md).
+
+Essas fontes registram a modelagem anterior dos exercícios. O status atual das validações automatizadas, a documentação vigente e os limites de homologação permanecem em [Plano de testes](docs/PLANO_TESTES.md).
