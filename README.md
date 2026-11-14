@@ -42,3 +42,9 @@ Estes arquivos incluem conteúdo de demonstração; use contas e dados fictício
 [Arquitetura](docs/ARQUITETURA.md) · [Requisitos](docs/REQUISITOS.md) · [Plano de testes](docs/PLANO_TESTES.md) · [UML](docs/UML.puml)
 
 *Laboratório didático com Maestro e aplicativo Wikipedia. A autoria do framework e dos aplicativos testados pertence aos respectivos mantenedores.*
+
+## Fluxo de login sem dependência externa
+
+O exemplo composto em `samples/wikipedia-android-advanced/` utiliza agora um usuário fictício da fixture local JavaScript, sem acessar o JSONPlaceholder nem compartilhar dados de terceiros. O subfluxo `auth/login.yml` demonstra **apenas o preenchimento do formulário**: não envia senha ou tentativa de autenticação ao serviço público da Wikipedia.
+
+Isso evita depender da disponibilidade e do conteúdo de uma API externa e não tenta representar login real como aprovado. O teste estrutural verifica a fixture local, o domínio `example.invalid` e a ausência de submissão automática. Ainda é necessário executar Maestro manualmente num dispositivo/emulador para validar seletores e navegação.
