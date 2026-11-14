@@ -1,23 +1,9 @@
-function username() {
-  var date = new Date().getTime().toString();
-  var username = `test_user_placeholder`.replace("placeholder", date);
-  return username;
-}
-
-function email() {
-  var date = new Date().getTime().toString();
-  var email = `test-user-placeholder@test.com`.replace("placeholder", date);
-  return email;
-}
-
-function password() {
-  var date = new Date().getTime().toString();
-  var password = `test-user-password-placeholder`.replace("placeholder", date);
-  return password;
-}
+// Apenas dados falsos para preencher formulários Maestro. Nenhuma conta é criada.
+// O domínio example.invalid é reservado e evita endereços reais de terceiros.
+const suffix = Date.now().toString();
 
 output.credentials = {
-  email: email(),
-  password: password(),
-  username: username(),
+  username: `maestro_demo_${suffix}`,
+  email: `maestro-demo-${suffix}@example.invalid`,
+  password: `demo-not-for-login-${suffix}`,
 };
