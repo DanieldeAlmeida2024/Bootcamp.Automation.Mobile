@@ -33,7 +33,7 @@ A CI confere estrutura YAML, identificadores de aplicativos, integridade das ref
 - `samples/*-advanced-flow.yaml`: navegação e busca em Wikipedia.
 - `samples/subflows/`: onboarding e limpeza de estado.
 - `samples/wikipedia-android-advanced/`: cenário composto de demonstração.
-- `samples/wikipedia.apk` e `samples/wikipedia.zip`: artefatos de exemplo preservados. As cópias **byte a byte idênticas** `sample.apk` e `sample.zip` foram removidas da versão corrente, economizando cerca de 38 MB de arquivos repetidos. O histórico Git antigo não foi reescrito.
+- `samples/wikipedia.apk` e `samples/wikipedia.zip`: artefatos de exemplo para execução dos fluxos em ambiente controlado.
 
 Estes arquivos incluem conteúdo de demonstração; use contas e dados fictícios. A execução em dispositivo exige conferir a versão do aplicativo e os seletores dos fluxos.
 
@@ -41,4 +41,4 @@ Estes arquivos incluem conteúdo de demonstração; use contas e dados fictício
 
 [Arquitetura](docs/ARQUITETURA.md) · [Requisitos](docs/REQUISITOS.md) · [Plano de testes](docs/PLANO_TESTES.md) · [UML](docs/UML.puml)
 
-*Origem do laboratório: exercícios de automação mobile com Maestro. Os fluxos presentes são exemplos da Wikipedia; esta manutenção não reivindica autoria dos aplicativos ou do framework.*
+*Laboratório didático com Maestro e aplicativo Wikipedia. A autoria do framework e dos aplicativos testados pertence aos respectivos mantenedores.*
