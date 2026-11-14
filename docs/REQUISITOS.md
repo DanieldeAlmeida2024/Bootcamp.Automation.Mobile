@@ -1,17 +1,14 @@
-# Requisitos — Bootcamp.Automation.Mobile
+# Requisitos — laboratório de automação mobile Wikipedia
 
-Objetivo: Automação de testes de interface Android/iOS com fluxos Maestro em YAML.
+Versão 1.1.0 — 14/11/2026
 
-RF01 — Executar o cenário ou exercício principal.
+- **RF01:** executar um fluxo básico por plataforma que inicia a Wikipedia e confirma elementos visíveis de onboarding.
+- **RF02:** executar fluxos avançados com navegação, busca e subfluxos independentes.
+- **RF03:** declarar o `appId` correto de cada plataforma em todos os arquivos YAML.
+- **RF04:** manter referências válidas de scripts e subfluxos.
+- **RNF01:** executar os fluxos reais com Maestro e dispositivo/emulador preparado.
+- **RNF02:** validar estrutura dos YAML em CI de forma offline.
+- **RNF03:** preservar a integridade e a proveniência de arquivos de demonstração, sem cópias binárias idênticas na árvore corrente.
+- **RNF04:** não tratar a validação estática como teste end-to-end nem afirmar que o aplicativo iFood foi testado.
 
-RF02 — Apresentar saída verificável e documentar pré-condições.
-
-RF03 — Sinalizar entradas inválidas e falhas externas.
-
-RNF01 — Executar de forma reproduzível em ambiente de testes.
-
-RNF02 — Não versionar segredos.
-
-Pendências: Requer APK instalado em dispositivo/emulador, não testado via conector GitHub.
-
-Requisitos inferidos dos arquivos; não são compromissos de produção.
+Riscos: atualização da interface Wikipedia; variação de idioma; onboarding dependente de estado; dependências de rede em alguns exemplos avançados; configuração de simulador Apple em macOS para iOS.

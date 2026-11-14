@@ -1,6 +1,9 @@
 appId: org.wikipedia
 tags:
   - android
-  - passing
+  - smoke
 ---
-- launchApp
+- launchApp:
+    clearState: true
+- assertVisible: "Continue"
+- assertVisible: "Skip"

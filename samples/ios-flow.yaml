@@ -1,6 +1,9 @@
 appId: org.wikimedia.wikipedia
 tags:
   - ios
-  - passing
+  - smoke
 ---
-- launchApp
+- launchApp:
+    clearState: true
+- assertVisible: "Next"
+- assertVisible: "Skip"
