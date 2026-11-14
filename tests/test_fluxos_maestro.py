@@ -86,5 +86,31 @@ class TestesMaestro(unittest.TestCase):
         self.assertFalse((SAMPLES / "sample.zip").exists())
 
 
+    def test_fixture_login_offline(self):
+        fixture = SAMPLES / "wikipedia-android-advanced/scripts/fetchTestUser.js"
+        texto = fixture.read_text(encoding="utf-8")
+        self.assertIn("example.invalid", texto)
+        self.assertIn("maestro_demo_not_a_real_account", texto)
+        for proibido in ("http.get(", "http.post(", "fetch(", "axios.", "jsonplaceholder.typicode.com"):
+            self.assertNotIn(proibido, texto)
+
+    def test_login_e_cadastro_nao_enviam_credenciais(self):
+        checks = (
+            ("auth/login.yml", "../scripts/fetchTestUser.js"),
+            ("auth/signup.yml", "../scripts/generateCredentials.js"),
+        )
+        for relative_path, script in checks:
+            path = SAMPLES / "wikipedia-android-advanced" / relative_path
+            docs = list(yaml.safe_load_all(path.read_text(encoding="utf-8")))
+            commands = docs[1]
+            self.assertIn(script, [item.get("runScript") for item in commands if isinstance(item, dict)])
+            self.assertEqual(commands[-2:], ["back", "back"])
+            for item in commands:
+                if isinstance(item, dict) and "tapOn" in item:
+                    target = str(item["tapOn"]).casefold()
+                    self.assertFalse(any(label in target for label in ("submit", "sign up", "sign in", "create your account")))
+
+
+
 if __name__ == "__main__":
     unittest.main()
